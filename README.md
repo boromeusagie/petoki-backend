@@ -3,7 +3,7 @@
 Complete database schema, RLS policies, storage, and edge functions for the 
 Petoki pet-health app. Pairs with the Expo app in `../petoki-frontend`.
 
-Linked project: **Petoki** (`jsmcaskkwzircdoaeryn`, ap-southeast-1).
+Linked project: **petoki-backend** (`hxlywvbzsoovptxsrnee`, ap-southeast-1).
 
 ## Schema at a glance
 
@@ -44,7 +44,7 @@ private `pet-media` storage bucket (paths: `{user_id}/{pet_id}/{file}`).
 ```bash
 cd petoki-backend
 supabase login
-supabase link --project-ref jsmcaskkwzircdoaeryn
+supabase link --project-ref hxlywvbzsoovptxsrnee
 supabase db push                      # applies migrations in order
 
 supabase functions deploy revenuecat-webhook --no-verify-jwt
@@ -63,7 +63,7 @@ Easiest: Dashboard → Edge Functions → `send-reminders` → Schedules → eve
 select cron.schedule(
   'petoki-send-reminders', '*/15 * * * *',
   $$ select net.http_post(
-       url := 'https://jsmcaskkwzircdoaeryn.supabase.co/functions/v1/send-reminders',
+       url := 'https://hxlywvbzsoovptxsrnee.supabase.co/functions/v1/send-reminders',
        headers := jsonb_build_object('Authorization', 'Bearer ' || '<anon-or-service-key>')
      ) $$
 );
