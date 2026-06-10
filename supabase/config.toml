@@ -1,0 +1,15 @@
+project_id = "petoki"
+
+[auth]
+site_url = "petoki://auth-callback"
+additional_redirect_urls = ["petoki://auth-callback", "exp://127.0.0.1:8081"]
+
+[auth.external.apple]
+enabled = true
+client_id = "env(APPLE_CLIENT_ID)"
+secret = "env(APPLE_SECRET)"
+
+[auth.external.google]
+enabled = true
+client_id = "env(GOOGLE_CLIENT_ID)"
+secret = "env(GOOGLE_SECRET)"
