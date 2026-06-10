@@ -1,6 +1,6 @@
 # Petoki Backend (Supabase)
 
-Complete database schema, RLS policies, storage, and edge functions for the
+Complete database schema, RLS policies, storage, and edge functions for the 
 Petoki pet-health app. Pairs with the Expo app in `../petoki-frontend`.
 
 Linked project: **Petoki** (`jsmcaskkwzircdoaeryn`, ap-southeast-1).
